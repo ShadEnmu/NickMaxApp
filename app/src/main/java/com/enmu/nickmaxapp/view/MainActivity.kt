@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val fragmentManager: FragmentManager = supportFragmentManager
-        val some : String
         fragmentManager.commit {
             replace<HomeFragment>(R.id.fcvMainView)
             setReorderingAllowed(true)
