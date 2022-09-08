@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NickMaxApp</string>
+    <string name="home">Домашняя страница</string>
+    <string name="news">Новости</string>
+    <string name="history">История</string>
+    <string name="settings">Настройки</string>
+    <string name="how_use_app">Как использовать приложение</string>
+</resources>
