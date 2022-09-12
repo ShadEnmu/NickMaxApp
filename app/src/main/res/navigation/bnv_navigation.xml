@@ -15,13 +15,13 @@
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
     <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.enmu.nickmaxapp.view.fragment.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
-    <fragment
         android:id="@+id/newsFragment"
         android:name="com.enmu.nickmaxapp.view.fragment.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.enmu.nickmaxapp.view.fragment.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

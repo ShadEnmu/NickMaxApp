@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.NickMaxApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.NickMaxApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/gray_light</item>
         <item name="colorPrimaryVariant">@color/white</item>
         <item name="colorOnPrimary">@color/black</item>
