@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray_light"
-    android:orientation="vertical"
-    tools:context=".view.fragment.HomeFragment">
+    android:fadeScrollbars="false"
+    android:overScrollMode="never"
+    android:fillViewport="true">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray_light_second"
-        android:src="@drawable/placeholder" />
+        android:orientation="vertical"
+        tools:context=".view.fragment.HomeFragment">
 
-</FrameLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_light_second"
+            android:src="@drawable/placeholder" />
+
+        <Button
+            android:id="@+id/btnStartNewWorkout"
+            style="@style/AddWorkoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/workout_button_shape"
+            android:fontFamily="@font/plexsans_family"
+            android:text="@string/add_workout"
+            android:textFontWeight="600"
+            android:textSize="18sp"
+            app:icon="@drawable/ic_plus"
+            app:iconGravity="textStart"
+            app:iconPadding="24dp"
+            app:iconTint="@color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWorkoutList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:nestedScrollingEnabled="true"
+            android:overScrollMode="never"/>
+
+        <TextView
+            android:id="@+id/tvEmptyListNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginVertical="80dp"
+            android:text="@string/tv_empty_list" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/add_from_history_outlined_button"
+            android:layout_marginHorizontal="16dp"
+            android:padding="2dp"
+            android:layout_marginBottom="64dp"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/btnLoadFromHistory"
+                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:text="@string/add_workout_from_history"
+                android:backgroundTint="@color/orange_white"
+                android:padding="12dp"
+                android:background="#0000"
+                android:fontFamily="@font/plexsans_family"
+                android:textFontWeight="600"
+                android:textSize="18sp"
+                app:icon="@drawable/ic_history"
+                app:iconGravity="textStart"
+                app:iconPadding="24dp"
+                app:iconTint="@color/orange"/>
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

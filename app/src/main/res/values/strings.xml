@@ -5,4 +5,7 @@
     <string name="history">History</string>
     <string name="settings">Settings</string>
     <string name="how_use_app">How to use app</string>
+    <string name="add_workout">Start a new workout</string>
+    <string name="tv_empty_list">Today was not any workouts</string>
+    <string name="add_workout_from_history">Load from history</string>
 </resources>

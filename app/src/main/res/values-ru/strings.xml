@@ -6,4 +6,7 @@
     <string name="history">История</string>
     <string name="settings">Настройки</string>
     <string name="how_use_app">Как использовать приложение</string>
+    <string name="add_workout">Начать новую тренировку</string>
+    <string name="tv_empty_list">Сегодня ещё не было тренировок</string>
+    <string name="add_workout_from_history">Загрузить из истории</string>
 </resources>
