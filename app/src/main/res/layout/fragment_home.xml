@@ -28,9 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/workout_button_shape"
-            android:fontFamily="@font/plexsans_family"
             android:text="@string/add_workout"
-            android:textFontWeight="600"
             android:textSize="18sp"
             app:icon="@drawable/ic_plus"
             app:iconGravity="textStart"
@@ -43,7 +41,9 @@
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:nestedScrollingEnabled="true"
-            android:overScrollMode="never"/>
+            android:overScrollMode="never"
+            android:layout_marginBottom="64dp"
+            />
 
         <TextView
             android:id="@+id/tvEmptyListNotification"
@@ -54,37 +54,6 @@
             android:visibility="gone"
             android:layout_marginVertical="80dp"
             android:text="@string/tv_empty_list" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/add_from_history_outlined_button"
-            android:layout_marginHorizontal="16dp"
-            android:padding="2dp"
-            android:layout_marginBottom="64dp"
-            android:gravity="bottom">
-
-            <Button
-                android:id="@+id/btnLoadFromHistory"
-                android:textAllCaps="false"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:text="@string/add_workout_from_history"
-                android:backgroundTint="@color/orange_white"
-                android:padding="12dp"
-                android:background="#0000"
-                android:fontFamily="@font/plexsans_family"
-                android:textFontWeight="600"
-                android:textSize="18sp"
-                app:icon="@drawable/ic_history"
-                app:iconGravity="textStart"
-                app:iconPadding="24dp"
-                app:iconTint="@color/orange"/>
-
-        </FrameLayout>
-
-
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

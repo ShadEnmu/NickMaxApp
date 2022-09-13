@@ -10,6 +10,7 @@ import com.enmu.nickmaxapp.R
 import com.enmu.nickmaxapp.adapter.WorkoutListAdapter
 import com.enmu.nickmaxapp.databinding.FragmentHomeBinding
 import com.enmu.nickmaxapp.model.WorkoutDataModel
+import java.lang.Math.random
 
 class HomeFragment : Fragment() {
 
@@ -24,33 +25,44 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentHomeBinding.inflate(layoutInflater)
         val adapter: WorkoutListAdapter = WorkoutListAdapter()
         val rvWorkoutList = view.findViewById<RecyclerView>(R.id.rvWorkoutList)
         rvWorkoutList.adapter = adapter
-        adapter.show(createWorkoutList())
+        adapter.submitList(createWorkoutList())
+        adapter.currentList()
+    }
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 
     fun createWorkoutList() = arrayListOf<WorkoutDataModel>(
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something"),
-        WorkoutDataModel(1, 2, "something")
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
+        WorkoutDataModel((0..180).random(), (0..100).random(), "12:48"),
     )
 
     companion object {
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             HomeFragment().apply {
 
             }

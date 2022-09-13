@@ -8,4 +8,5 @@
     <string name="add_workout">Start a new workout</string>
     <string name="tv_empty_list">Today was not any workouts</string>
     <string name="add_workout_from_history">Load from history</string>
+    <string name="percent_sign" translatable="false">%</string>
 </resources>

@@ -3,19 +3,24 @@ package com.enmu.nickmaxapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.enmu.nickmaxapp.R
 import com.enmu.nickmaxapp.model.WorkoutDataModel
+import androidx.recyclerview.widget.AsyncListDiffer
+import com.enmu.nickmaxapp.core.WorkoutDiffCallback
 
 class WorkoutListAdapter : RecyclerView.Adapter<WorkoutListAdapter.WorkoutListViewHolder>() {
 
-    private var list = ArrayList<WorkoutDataModel>()
+    private val asyncDiffer : AsyncListDiffer<WorkoutDataModel> = AsyncListDiffer(this, WorkoutDiffCallback())
 
-    fun show(newList : List<WorkoutDataModel>){
-        list.clear()
-        list.addAll(newList)
-        notifyDataSetChanged()
+    fun submitList(list: List<WorkoutDataModel>) {
+        asyncDiffer.submitList(list)
+    }
+
+    fun currentList(): List<WorkoutDataModel> {
+        return asyncDiffer.currentList
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkoutListViewHolder {
@@ -25,16 +30,20 @@ class WorkoutListAdapter : RecyclerView.Adapter<WorkoutListAdapter.WorkoutListVi
     }
 
     override fun onBindViewHolder(holder: WorkoutListViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(asyncDiffer.currentList[position])
     }
 
     override fun getItemCount(): Int {
-        return list.size
+        return asyncDiffer.currentList.size
     }
 
+
     inner class WorkoutListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val tvAngle = view.findViewById<TextView>(R.id.tvAngle)
+        private val tvPercent = view.findViewById<TextView>(R.id.tvPercent)
+        private val tvTime = view.findViewById<TextView>(R.id.tvTime)
         fun bind(model: WorkoutDataModel) {
-            // TODO:
+            model.map(tvAngle, tvPercent, tvTime)
         }
     }
 }
